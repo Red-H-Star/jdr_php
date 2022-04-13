@@ -1,3 +1,3 @@
 <?php
-    header('Location: Authentification.php');
+    header('Location: authentification.php');
 ?>
