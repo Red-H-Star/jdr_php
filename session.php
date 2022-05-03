@@ -1,6 +1,9 @@
 <?php
+    session_start();
     $id = $_POST["idLog"];
     $password = $_POST["passLog"];
+    $valid = false;
+    
 
     $mysqli = mysqli_connect("localhost", "root", "", "jdrphp");
     if (mysqli_connect_errno()) {
@@ -8,11 +11,15 @@
     }
 
     $userExist = mysqli_query($mysqli, "SELECT * FROM USERS;");
-    if($id == "root" && $password == ""){
-        header("Location: Default.php");
+    while($row = $userExist->fetch_assoc()){
+        if($id == $row["nomUser"] && $password == $row["mdp"]){
+            $valid = true;
+            header("Location: acceuil.php");
+        }
     }
-    else{
+    
+    if($valid == false){
         $_SESSION["Message"] = "The logins that you entered were not recognized. Please enter correct logins.";
-        header("Location: Authentification.php");
+        header("Location: authentification.php");
     }
 ?>
