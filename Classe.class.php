@@ -1,4 +1,9 @@
 <?php
 class Classe{
-    private
+
+    // ========== ATTRIBUTS ===========
+    private int iClasse;
+    private string nomClasse;
+    private int pdvClasse;
+    private string jdSClasse;
 }

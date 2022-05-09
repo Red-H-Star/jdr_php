@@ -17,7 +17,7 @@
             <h1>
                 Authentification
             </h1>
-                <form onsubmit=wellReceived() action="./Session.php" method="post">
+                <form onsubmit=wellReceived() action="./session.php" method="post">
                     <label for="idLog">Identifiant:</label><br>
                     <input type="text" id="idLog" name="idLog"><br><br>
                     <label for="passLog">Mot de passe :</label><br>
