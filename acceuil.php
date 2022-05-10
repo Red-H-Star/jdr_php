@@ -6,7 +6,7 @@
     </head>
     <body>
     <h1>Liste de Personnages disponible</h1>
-        <form action="./test.php" method="post">
+        <form action="./fichePerso.php" method="post">
             <?php
             require('fonctions.php');
 
@@ -17,11 +17,16 @@
 
             $persoDispo = mysqli_query($mysqli, "SELECT nomPerso FROM personnages;");
 
-            $tabPerso = tableauPerso($persoDispo);
+            $tabPerso = CreateTableau($persoDispo, "nomPerso");
 
-            echo afficheTableau($tabPerso);
+            echo AfficheTableau($tabPerso);
             ?>
         </form>
-        <input type="button" value="Nouveau personnage" id="btnNewChara" action="./test.php">
+        <input type="button" value="Nouveau personnage" id="btnNewChara" onclick=BtNew()>
     </body>
+    <script>
+        function BtNew(){
+            window.location.href="./nouveauPerso.php";
+        }
+    </script>
 </html>

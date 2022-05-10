@@ -3,43 +3,75 @@
 
     /*
         Fonction tableauPerso
-        @params $result (object)
-        @return un array avec les noms de personnages
+        @params $result (object) and $colonne (string)
+        @return un array avec la colonne de données souhaitée
     */
 
-    function tableauPerso(object $result) : array
+    function CreateTableau(object $result, string $colonne) : array
     {
-        $tablePerso = array();
+        $table = array();
         while($row = $result->fetch_assoc()){
-            array_push($tablePerso, $row["nomPerso"]);
+            array_push($table, $row[$colonne]);
         }
-        return $tablePerso;
+        return $table;
     }
 
     /*
         Fonction afficheTableau
         @params $tableauAffiche (array)
-        @return un string avec des balises pour HTML
+        @return un string avec des balises pour HTML ($tabCree)
     */
 
-    function afficheTableau(array $tableauAffiche) : string
+    function AfficheTableau(array $tableauAffiche) : string
     {
-        $tabPerso = "<table style='width:100% ; border:2px solid black'>";
+        $tabCree = "<table style='width:100% ; border:2px solid black'>";
         $ligne = -1;
         while($ligne < count($tableauAffiche)){
-            $tabPerso = $tabPerso . "<tr style='border:1px solid black'>";
+            $tabCree = $tabCree . "<tr style='border:1px solid black'>";
             if($ligne == -1){
-                $tabPerso = $tabPerso . "<th style='border:1px solid black'>Nom personnage</th>";
-                $tabPerso = $tabPerso . "<th style='border:1px solid black'>Accéder à la fiche du personnage</th>";
+                $tabCree = $tabCree . "<th style='border:1px solid black'>
+                                        Nom personnage</th>";
+                $tabCree = $tabCree . "<th style='border:1px solid black'>
+                                        Accéder à la fiche du personnage</th>";
             }
             else{
-                $tabPerso = $tabPerso . "<td style='border:1px solid black'>". $tableauAffiche[$ligne] . "</td>";
-                $tabPerso = $tabPerso . "<td style='border:1px solid black'><input type='submit' value='Accès à la fiche'></td>";
+                $tabCree = $tabCree . "<td style='border:1px solid black'>"
+                                        . $tableauAffiche[$ligne] . "</td>";
+                $tabCree = $tabCree . "<td style='border:1px solid black'>
+                                        <input type='submit' value='Accès à la fiche'></td>";
             }
-            $tabPerso = $tabPerso . "</tr>";
+            $tabCree = $tabCree . "</tr>";
             $ligne ++;
         }
-        $tabPerso = $tabPerso . "</table>";
-        return $tabPerso;
+        $tabCree = $tabCree . "</table>";
+        return $tabCree;
+    }
+
+    /*
+    Fonction createSelect
+    @params $list (array) and $itemToSelect (string)
+    @return a select element in HTML using a string of caracters (string)
+    */
+
+    function CreateSelect(array $list, string $itemToSelect) : string{
+        $databaseSelect = "<label for=" . $itemToSelect .
+                          "-select'>Choisissez une " . $itemToSelect . ": </label>";
+
+        $databaseSelect = $databaseSelect . "<select name='" .
+                            $itemToSelect . "-select' id='id" . $itemToSelect . "-select'>";
+
+        for($listIndex = -1; $listIndex < count($list) ; $listIndex++){
+            if($listIndex == -1){
+                $databaseSelect = $databaseSelect . "<option value=''>
+                                                    --Veuillez choisir une option--</option>";
+            }
+            else{
+                $databaseSelect = $databaseSelect . "<option value=" .
+                                                    $list[$listIndex] . ">" .
+                                                    $list[$listIndex] . "</option>";
+            }
+        }
+        $databaseSelect = $databaseSelect . "</select>";
+        return $databaseSelect;
     }
 ?>
