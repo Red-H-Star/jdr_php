@@ -2,7 +2,7 @@
     // Fichier servant à ranger toutes les fonctions php utilisées par le site web
 
     /*
-        Fonction tableauPerso
+        Fonction CreateTableau
         @params $result (object) and $colonne (string)
         @return un array avec la colonne de données souhaitée
     */
@@ -15,6 +15,24 @@
         }
         return $table;
     }
+
+    /*
+        Fonction tableauPerso
+        @params $result (object) and $tabColonne (string)
+        @return un array selon les colonne de données souhaitées
+    */
+
+    function CreateLigne(object $result, array $tabColonne) : array
+    {
+        $ligne = array();
+        while($row = $result->fetch_assoc()){
+            for($i = 0; $i < count($tabColonne); $i++){
+                array_push($ligne, $row[$tabColonne[$i]]);
+            }
+        }
+        return $ligne;
+    }
+
 
     /*
         Fonction afficheTableau
@@ -30,15 +48,13 @@
             $tabCree = $tabCree . "<tr style='border:1px solid black'>";
             if($ligne == -1){
                 $tabCree = $tabCree . "<th style='border:1px solid black'>
-                                        Nom personnage</th>";
-                $tabCree = $tabCree . "<th style='border:1px solid black'>
-                                        Accéder à la fiche du personnage</th>";
+                                        Personnage disponible</th>";
             }
             else{
-                $tabCree = $tabCree . "<td style='border:1px solid black'>"
-                                        . $tableauAffiche[$ligne] . "</td>";
-                $tabCree = $tabCree . "<td style='border:1px solid black'>
-                                        <input type='submit' value='Accès à la fiche'></td>";
+                $tabCree = $tabCree . "<td style='border:1px solid black; text-align:center'>"
+                            . $tableauAffiche[$ligne] .
+                            "<span STYLE='padding:0 0 0 5em'><input type='submit'
+                            value='Accès à la fiche'></span></td>";
             }
             $tabCree = $tabCree . "</tr>";
             $ligne ++;

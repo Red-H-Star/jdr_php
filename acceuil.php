@@ -17,9 +17,11 @@
 
             $persoDispo = mysqli_query($mysqli, "SELECT nomPerso FROM personnages;");
 
-            $tabPerso = CreateTableau($persoDispo, "nomPerso");
+            $tabPerso = CreateTableau($persoDispo, "nomPerso") ;
 
-            echo AfficheTableau($tabPerso);
+            echo CreateSelect($tabPerso, "personnage");
+            echo "<span STYLE='padding:0 0 0 20px'><input type='submit' value=
+                'Accès à la fiche'></span></td>";
             ?>
         </form>
         <input type="button" value="Nouveau personnage" id="btnNewChara" onclick=BtNew()>

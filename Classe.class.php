@@ -2,8 +2,8 @@
 class Classe{
 
     // ========== ATTRIBUTS ===========
-    private int iClasse;
-    private string nomClasse;
-    private int pdvClasse;
-    private string jdSClasse;
+    private int $idClasse;
+    private string $nomClasse;
+    private int $pdvClasse;
+    private string $jdSClasse;
 }
