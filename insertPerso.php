@@ -21,7 +21,7 @@ $sagChoisi = $_POST["valeurSagesse"];
 $chaChoisi = $_POST["valeurCharisme"];
 
 
-$sumStats = $forChoisi + $dexChoisi + $conChoisi + $intChoisi + $sagChoisi + $chaChoisi;
+$sumStats = $forChoisi + $dexChoisi + $conChoisi + $intChoisi + $sagChoisi + $chaChoisi; // Permet de vérifier que l'utilisateur à bien respecter la répartition des chiffres donnés
 
 if($sumStats != 72){
     session_start();
