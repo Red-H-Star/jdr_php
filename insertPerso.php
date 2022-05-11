@@ -25,7 +25,7 @@ $sumStats = $forChoisi + $dexChoisi + $conChoisi + $intChoisi + $sagChoisi + $ch
 
 if($sumStats != 72){
     session_start();
-    $_SESSION["Notification"] = "Les caractéristique sélectionner ne correspondent pas à la liste
+    $_SESSION["Notification"] = "Les caractéristiques sélectionnées ne correspondent pas à la liste
                                 donnée. Veuillez recommencer.";
     header("Location: nouveauPerso.php");
 }

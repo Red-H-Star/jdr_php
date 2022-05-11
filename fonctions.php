@@ -17,9 +17,9 @@
     }
 
     /*
-        Fonction tableauPerso
-        @params $result (object) and $tabColonne (string)
-        @return un array selon les colonne de données souhaitées
+        Fonction CreateLigne
+        @params $result (object) and $tabColonne (array)
+        @return un array selon les colonnes de données souhaitées
     */
 
     function CreateLigne(object $result, array $tabColonne) : array

@@ -1,8 +1,8 @@
 <?php
     session_start(); // Démarre une session, afin de permettre l'utilisation de la méthode POST
-    $id = $_POST["idLog"];
-    $password = $_POST["passLog"];
-    $valid = false;
+    $id = $_POST["idLog"];          // Récupération de l'Identifiant grâce à la méthode POST
+    $password = $_POST["passLog"];  // Récupération du mot de passe à l'aide de la méthode POST
+    $valid = false;                 // Variable servant de vérification de la présence de l'utilisateur dans la bdd
     
 
     $mysqli = mysqli_connect("localhost", "root", "", "jdrphp");
@@ -18,7 +18,7 @@
         }
     }
     
-    if($valid == false){    // Si l'utilisateur n'est pas dans la bdd, renvoie un message d'erreur
+    if($valid == false){    // Si l'utilisateur n'est pas présent dans la bdd, renvoie un message d'erreur
         $_SESSION["Message"] = "The logins that you entered were not recognized. Please
                                 enter correct logins.";
         header("Location: authentification.php");
