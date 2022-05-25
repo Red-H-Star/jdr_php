@@ -21,13 +21,17 @@ SET time_zone = "+00:00";
 -- Base de données : `jdrphp`
 --
 
+DROP DATABASE IF EXISTS `jdrphp`;
+CREATE DATABASE IF NOT EXISTS`jdrphp`
+/*!40100 DEFAULT CHARACTER SET latin1 */;
+USE jdrphp;
+
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `classes`
 --
 
-DROP TABLE IF EXISTS `classes`;
 CREATE TABLE IF NOT EXISTS `classes` (
   `idClasse` int(11) NOT NULL AUTO_INCREMENT,
   `nomClasse` varchar(50) DEFAULT NULL,
@@ -51,7 +55,6 @@ INSERT INTO `classes` (`idClasse`, `nomClasse`, `pdvClasse`, `jdSClasse`) VALUES
 -- Structure de la table `personnages`
 --
 
-DROP TABLE IF EXISTS `personnages`;
 CREATE TABLE IF NOT EXISTS `personnages` (
   `idPerso` int(11) NOT NULL AUTO_INCREMENT,
   `nomPerso` varchar(50) DEFAULT NULL,
@@ -82,7 +85,6 @@ INSERT INTO `personnages` (`idPerso`, `nomPerso`, `racePerso`, `classePerso`, `n
 -- Structure de la table `races`
 --
 
-DROP TABLE IF EXISTS `races`;
 CREATE TABLE IF NOT EXISTS `races` (
   `idRace` int(11) NOT NULL AUTO_INCREMENT,
   `nomRace` varchar(50) DEFAULT NULL,
@@ -117,7 +119,6 @@ INSERT INTO `races` (`idRace`, `nomRace`, `bonusFOR`, `bonusDEX`, `bonusCON`, `b
 -- Structure de la table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `idUser` int(11) NOT NULL AUTO_INCREMENT,
   `nomUser` varchar(50) DEFAULT NULL,

@@ -71,7 +71,7 @@
 
     function CreateSelect(array $list, string $itemToSelect) : string{
         $databaseSelect = "<label for=" . $itemToSelect .
-                          "-select'>Choisissez une " . $itemToSelect . ": </label>";
+                          "-select'>Choisissez un " . $itemToSelect . ": </label>";
 
         $databaseSelect = $databaseSelect . "<select name='" .
                             $itemToSelect . "-select' id='id" . $itemToSelect . "-select'>";
