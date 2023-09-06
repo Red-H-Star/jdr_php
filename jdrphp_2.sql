@@ -107,11 +107,11 @@ INSERT INTO `races` (`idRace`, `nomRace`, `bonusFOR`, `bonusDEX`, `bonusCON`, `b
 (1, 'Gobelin', -1, 2, 0, 0, -1, -1, 'P', 9.0),
 (2, 'Humain', 1, 1, 1, 1, 1, 1, 'M', 9.0),
 (3, 'Demi-Orc', 2, 0, 1, 0, 0, 0, 'M', 9.0),
-(4, 'Nain_des_montagnes', 2, 0, 2, 0, 0, 0, 'M', 7.5),
-(5, 'Nain_des_collines', 0, 0, 2, 0, 1, 0, 'M', 7.5),
+(4, 'Nain des montagnes', 2, 0, 2, 0, 0, 0, 'M', 7.5),
+(5, 'Nain des collines', 0, 0, 2, 0, 1, 0, 'M', 7.5),
 (6, 'Haut-Elfe', 0, 2, 0, 1, 0, 0, 'M', 9.0),
-(7, 'Elfe_des_bois', 0, 2, 0, 0, 1, 0, 'M', 10.5),
-(8, 'Elfe_noir', 0, 2, 0, 0, 0, 1, 'M', 9.0);
+(7, 'Elfe des bois', 0, 2, 0, 0, 1, 0, 'M', 10.5),
+(8, 'Elfe noir', 0, 2, 0, 0, 0, 1, 'M', 9.0);
 
 -- --------------------------------------------------------
 
