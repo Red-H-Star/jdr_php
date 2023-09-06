@@ -73,12 +73,12 @@
         $databaseSelect = "<label for=" . $itemToSelect .
                           "-select'>Choisissez un " . $itemToSelect . ": </label>";
 
-        $databaseSelect = $databaseSelect . "<select name='" .
+        $databaseSelect = $databaseSelect . "<select required name='" .
                             $itemToSelect . "-select' id='id" . $itemToSelect . "-select'>";
 
         for($listIndex = -1; $listIndex < count($list) ; $listIndex++){
             if($listIndex == -1){
-                $databaseSelect = $databaseSelect . "<option value=''>
+                $databaseSelect = $databaseSelect . "<option value=\"\">
                                                     --Veuillez choisir une option--</option>";
             }
             else{

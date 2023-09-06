@@ -104,7 +104,7 @@ CREATE TABLE IF NOT EXISTS `races` (
 --
 
 INSERT INTO `races` (`idRace`, `nomRace`, `bonusFOR`, `bonusDEX`, `bonusCON`, `bonusINT`, `bonusSAG`, `bonusCHA`, `taille`, `vitesse`) VALUES
-(1, 'Gobelin', -1, 2, 0, 0, -1, -1, 'P', 9.0),
+(1, 'Gobelin', 0, 2, 1, 0, 0, 0, 'P', 9.0),
 (2, 'Humain', 1, 1, 1, 1, 1, 1, 'M', 9.0),
 (3, 'Demi-Orc', 2, 0, 1, 0, 0, 0, 'M', 9.0),
 (4, 'Nain des montagnes', 2, 0, 2, 0, 0, 0, 'M', 7.5),

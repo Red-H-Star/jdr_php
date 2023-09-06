@@ -1,7 +1,8 @@
 <?php
 require('fonctions.php');
 
-$persoChoisi = $_POST['personnage-select'];
+session_start();
+$persoChoisi = $_GET['personnage-select'];
 
 $mysqli = mysqli_connect("localhost", "root", "", "jdrphp");
             if (mysqli_connect_errno()) {
